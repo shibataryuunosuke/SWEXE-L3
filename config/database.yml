@@ -22,4 +22,16 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  pool:5
+  
+production:
+  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: kadai_iph3
+  username: shibataryuunosuke
+  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
